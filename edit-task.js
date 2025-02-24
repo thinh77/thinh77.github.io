@@ -13,7 +13,7 @@ let tempName;
 const showTask = async () => {
     try {
         const { data:task } = await axios.get(
-            `http://34.87.27.137//api/v1/tasks/${id}`
+            `https://34.87.27.137/api/v1/tasks/${id}`
         );
         const { id: taskID, completed, title } = task;
 
@@ -39,7 +39,7 @@ editFormDOM.addEventListener("submit", async (e) => {
 
         const {
             data: task ,
-        } = await axios.patch(`http://34.87.27.137//api/v1/tasks/${id}`, {
+        } = await axios.patch(`https://34.87.27.137/api/v1/tasks/${id}`, {
             title: taskName,
             completed: taskCompleted,
         });

@@ -9,7 +9,7 @@ const showTasks = async () => {
   try {
     const {
       data : tasks
-    } = await axios.get('http://34.87.27.137/api/v1/tasks')
+    } = await axios.get('https://34.87.27.137/api/v1/tasks')
     console.log(tasks);
     
     if (tasks.length < 1) {
@@ -56,7 +56,7 @@ tasksDOM.addEventListener('click', async (e) => {
     loadingDOM.style.visibility = 'visible'
     const id = el.parentElement.dataset.id
     try {
-      await axios.delete(`http://34.87.27.137/api/v1/tasks/${id}`)
+      await axios.delete(`https://34.87.27.137/api/v1/tasks/${id}`)
       showTasks()
     } catch (error) {
       console.log(error)
@@ -78,7 +78,7 @@ formDOM.addEventListener('submit', async (e) => {
   }
   
   try {
-    await axios.post('http://34.87.27.137/api/v1/tasks', task)
+    await axios.post('https://34.87.27.137/api/v1/tasks', task)
     showTasks()
     taskInputDOM.value = ''
     formAlertDOM.style.display = 'block'
